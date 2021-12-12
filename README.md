@@ -1,3 +1,4 @@
 # sinestesia teatro
 Sinestesia Teatro Repo
-![fondo][fondo1sm.jpg]
+
+[img1]: /fondo1sm.jpg.jpg "Fondo"
