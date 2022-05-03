@@ -1,3 +1,3 @@
-# sinestesia teatro
+# Sinestesia Teatro Negro
 Sinestesia Teatro Repo
 
