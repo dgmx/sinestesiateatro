@@ -12,3 +12,7 @@ antes:
 
 y mucho antes:
 
+![El Pez Arcoiris](fondo1sm.jpg "El Pez Arcoiris")
+
+
+
