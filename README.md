@@ -7,4 +7,8 @@ Sinestesia Teatro Repo
 
 antes:
 
-![Belinda](belinda.jpgg "Belinda")
+![Belinda](belinda.jpg "Belinda")
+
+
+y mucho antes:
+
