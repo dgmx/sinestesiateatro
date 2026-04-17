@@ -1,34 +1,146 @@
-<html>
-	<head>
-	    <title>Sinestesia Teatro</title>
-		<meta http-equiv="Content-Type" content="text/html; ISO-8859-1">
-		<META NAME="DC.Language" SCHEME="RFC1766" CONTENT="Spanish">
-		<META NAME="AUTHOR" CONTENT="mj carras">
-		<META NAME="REPLY-TO" CONTENT="mj@sinestesiateatro.es">
-		<LINK REV="made" href="mailto:mj@sinestesiateatro.es">
-		<META NAME="DESCRIPTION" CONTENT="Sinestesia Teatro Negro">
-		<META NAME="KEYWORDS" CONTENT="Sinestesia Teatro Negro">
-		<META NAME="Resource-type" CONTENT="Document">
-		<META NAME="DateCreated" CONTENT="Wed, 1 December 2021 00:00:00 GMT+1">
-		<META NAME="Revisit-after" CONTENT="10 days">
-		<META NAME="robots" content="ALL">
-		<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet"/>
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-	</head>
-	<body>
-		<picture>
-			<img class="hidden-xs img-responsive"  src="gruffalo.png">
-			<img class="visible-xs" src="gruffalo.jpg">
-		</picture>
-
-		<picture>
-			<img class="hidden-xs img-responsive"  src="belinda.jpg">
-			<img class="visible-xs" src="belinda.jpg">
-		</picture>
-		
-		<a href="index.html">Volver a Inicio</a>
-	</body>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <title>Espectáculos Anteriores - Sinestesia Teatro Negro</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Espectáculos anteriores de Sinestesia Teatro Negro">
+    <link rel="stylesheet" href="css/estilo.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Raleway:wght@300;400;600&display=swap">
+    <style>
+        :root {
+            --primary: #1a1a2e;
+            --secondary: #16213e;
+            --accent: #e94560;
+            --gold: #c9a227;
+            --light: #f5f5f5;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Raleway', sans-serif;
+            background: var(--primary);
+            color: var(--light);
+            min-height: 100vh;
+        }
+        
+        .header {
+            background: var(--secondary);
+            padding: 2rem;
+            text-align: center;
+        }
+        
+        .header h1 {
+            font-family: 'Playfair Display', serif;
+            color: var(--gold);
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .header p {
+            opacity: 0.8;
+        }
+        
+        .gallery {
+            max-width: 1200px;
+            margin: 3rem auto;
+            padding: 0 2rem;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 3rem;
+        }
+        
+        .gallery-item {
+            background: var(--secondary);
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            transition: transform 0.3s;
+        }
+        
+        .gallery-item:hover {
+            transform: translateY(-10px);
+        }
+        
+        .gallery-item img {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+        }
+        
+        .gallery-item .info {
+            padding: 1.5rem;
+        }
+        
+        .gallery-item h3 {
+            font-family: 'Playfair Display', serif;
+            color: var(--gold);
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .gallery-item p {
+            opacity: 0.8;
+            font-size: 0.95rem;
+        }
+        
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--light);
+            text-decoration: none;
+            padding: 1rem 2rem;
+            margin: 2rem;
+            background: var(--accent);
+            border-radius: 4px;
+            transition: background 0.3s;
+        }
+        
+        .back-link:hover {
+            background: #d63850;
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <h1>Espectáculos Anteriores</h1>
+        <p>Repaso a nuestras producciones más queridas</p>
+    </header>
+    
+    <a href="index.html" class="back-link">
+        ← Volver al Inicio
+    </a>
+    
+    <div class="gallery">
+        <div class="gallery-item">
+            <img src="img/gruffalo.png" alt="El Gruffalo">
+            <div class="info">
+                <h3>El Gruffalo</h3>
+                <p>Una adaptación del cuento de Julia Donaldson sobre un ratón que inventa un monstruo terrible para asustar a sus depredadores, con un final inesperado que encanta a pequeños y mayores.</p>
+            </div>
+        </div>
+        
+        <div class="gallery-item">
+            <img src="img/belinda.jpg" alt="Belinda">
+            <div class="info">
+                <h3>Belinda</h3>
+                <p>Un espectáculo lleno de magia y fantasía donde Belinda nos transporta a mundos de ensueño através de las sombras y la música.</p>
+            </div>
+        </div>
+        
+        <div class="gallery-item">
+            <img src="img/PEZARCO_24.png" alt="Pez Arcoíris">
+            <div class="info">
+                <h3>Pez Arcoíris</h3>
+                <p>Un viaje de colores y emociones donde las marionetas cobran vida en un espectáculo visual que celebra la diversidad y la amistad.</p>
+            </div>
+        </div>
+    </div>
+</body>
 </html>
-
-

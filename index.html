@@ -1,38 +1,634 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
 <head>
-<title>SINESTESIA TEATRO NEGRO</title>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="Keywords" content="Teatro Negro, Sinestesia, Teatro Infantil, Teatro, Belinda">
-<meta name="Description" content="Sinestesia Teatro Negro presenta Belinda.">
-<link rel="stylesheet" href="estilo.css">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
-<style>
-body,h1 {font-family: "Raleway", sans-serif}
-body, html {height: 100%}
-.bgimg {
-  background-image: url('PEZARCO_24.png');
-  min-height: 100%;
-  background-position: center;
-  background-size: cover;
-}
-</style>
+    <title>Sinestesia Teatro Negro</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Sinestesia Teatro Negro - Teatro de sombras y marionetas para todas las edades">
+    <meta name="keywords" content="Teatro Negro, Teatro Infantil, Marionetas, Sombras, Sinestesia">
+    <link rel="stylesheet" href="css/estilo.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Raleway:wght@300;400;600&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #1a1a2e;
+            --secondary: #16213e;
+            --accent: #e94560;
+            --gold: #c9a227;
+            --light: #f5f5f5;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        body {
+            font-family: 'Raleway', sans-serif;
+            color: var(--primary);
+            line-height: 1.6;
+        }
+        
+        h1, h2, h3 {
+            font-family: 'Playfair Display', serif;
+        }
+        
+        .navbar {
+            background: var(--primary);
+            padding: 1rem 2rem;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            color: var(--gold);
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+        
+        .nav-links a {
+            color: var(--light);
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+        
+        .nav-links a:hover {
+            color: var(--gold);
+        }
+        
+        .hero {
+            min-height: 100vh;
+            background: linear-gradient(rgba(26, 26, 46, 0.85), rgba(22, 33, 62, 0.9)),
+                        url('img/PEZARCO_24.png') center/cover;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: var(--light);
+            padding: 2rem;
+        }
+        
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            color: var(--gold);
+        }
+        
+        .hero p {
+            font-size: 1.3rem;
+            max-width: 600px;
+            margin-bottom: 2rem;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 1rem 2rem;
+            background: var(--accent);
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+            font-weight: 600;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(233, 69, 96, 0.4);
+        }
+        
+        .section {
+            padding: 5rem 2rem;
+        }
+        
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            color: var(--primary);
+            position: relative;
+        }
+        
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 3px;
+            background: var(--gold);
+            margin: 1rem auto 0;
+        }
+        
+        #presentacion {
+            background: var(--light);
+        }
+        
+        .presentacion-content {
+            max-width: 900px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+        
+        .presentacion-text h3 {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+            color: var(--secondary);
+        }
+        
+        .presentacion-text p {
+            margin-bottom: 1rem;
+            text-align: justify;
+        }
+        
+        .presentacion-image {
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+        }
+        
+        .presentacion-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        
+        #calendario {
+            background: var(--primary);
+            color: var(--light);
+        }
+        
+        #calendario .section-title {
+            color: var(--light);
+        }
+        
+        .calendario-grid {
+            max-width: 1000px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+        
+        .evento-card {
+            background: var(--secondary);
+            border-radius: 8px;
+            padding: 2rem;
+            border-left: 4px solid var(--gold);
+            transition: transform 0.3s;
+        }
+        
+        .evento-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .evento-fecha {
+            color: var(--gold);
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+        
+        .evento-titulo {
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .evento-lugar {
+            color: #aaa;
+            font-size: 0.9rem;
+        }
+        
+        .evento-lugar i {
+            margin-right: 0.5rem;
+        }
+        
+        #eventos {
+            background: var(--light);
+        }
+        
+        .carousel-container {
+            max-width: 900px;
+            margin: 0 auto;
+            position: relative;
+            overflow: hidden;
+            border-radius: 12px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.15);
+        }
+        
+        .carousel {
+            display: flex;
+            transition: transform 0.5s ease;
+        }
+        
+        .carousel-slide {
+            min-width: 100%;
+            position: relative;
+        }
+        
+        .carousel-slide img {
+            width: 100%;
+            height: 500px;
+            object-fit: cover;
+        }
+        
+        .carousel-caption {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(transparent, rgba(0,0,0,0.8));
+            color: white;
+            padding: 2rem;
+        }
+        
+        .carousel-caption h3 {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .carousel-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(255,255,255,0.9);
+            border: none;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 1.2rem;
+            transition: background 0.3s;
+        }
+        
+        .carousel-btn:hover {
+            background: var(--gold);
+        }
+        
+        .carousel-btn.prev { left: 1rem; }
+        .carousel-btn.next { right: 1rem; }
+        
+        .carousel-dots {
+            display: flex;
+            justify-content: center;
+            gap: 0.5rem;
+            padding: 1rem;
+            background: var(--primary);
+        }
+        
+        .carousel-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.3);
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        
+        .carousel-dot.active {
+            background: var(--gold);
+        }
+        
+        #contacto {
+            background: var(--secondary);
+            color: var(--light);
+        }
+        
+        #contacto .section-title {
+            color: var(--light);
+        }
+        
+        .contacto-container {
+            max-width: 800px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+        }
+        
+        .contacto-info h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+            color: var(--gold);
+        }
+        
+        .contacto-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .contacto-item i {
+            width: 40px;
+            height: 40px;
+            background: var(--accent);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .contacto-item a {
+            color: var(--light);
+            text-decoration: none;
+        }
+        
+        .contacto-item a:hover {
+            color: var(--gold);
+        }
+        
+        .redes-sociales {
+            display: flex;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+        
+        .redes-sociales a {
+            width: 45px;
+            height: 45px;
+            background: var(--primary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--light);
+            text-decoration: none;
+            transition: background 0.3s, transform 0.3s;
+        }
+        
+        .redes-sociales a:hover {
+            background: var(--accent);
+            transform: translateY(-3px);
+        }
+        
+        .contacto-form {
+            background: var(--primary);
+            padding: 2rem;
+            border-radius: 8px;
+        }
+        
+        .contacto-form h3 {
+            margin-bottom: 1.5rem;
+            color: var(--gold);
+        }
+        
+        .form-group {
+            margin-bottom: 1rem;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+        }
+        
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.8rem;
+            border: none;
+            border-radius: 4px;
+            font-family: inherit;
+        }
+        
+        .form-group textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+        
+        footer {
+            background: var(--primary);
+            color: var(--light);
+            text-align: center;
+            padding: 2rem;
+        }
+        
+        footer p {
+            opacity: 0.7;
+        }
+        
+        .menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            color: var(--light);
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+        
+        @media (max-width: 768px) {
+            .menu-toggle {
+                display: block;
+            }
+            
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: var(--primary);
+                flex-direction: column;
+                padding: 1rem;
+                gap: 1rem;
+            }
+            
+            .nav-links.active {
+                display: flex;
+            }
+            
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+            
+            .presentacion-content {
+                grid-template-columns: 1fr;
+            }
+            
+            .contacto-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .carousel-slide img {
+                height: 300px;
+            }
+        }
+    </style>
 </head>
 <body>
+    <nav class="navbar">
+        <div class="logo">Sinestesia Teatro Negro</div>
+        <button class="menu-toggle" onclick="toggleMenu()">
+            <i class="fas fa-bars"></i>
+        </button>
+        <ul class="nav-links">
+            <li><a href="#presentacion">Nosotros</a></li>
+            <li><a href="#calendario">Calendario</a></li>
+            <li><a href="#eventos">Espectáculos</a></li>
+            <li><a href="#contacto">Contacto</a></li>
+        </ul>
+    </nav>
 
-<div class="bgimg w3-display-container w3-animate-opacity w3-text-white">
-  <div class="w3-display-topleft w3-padding-large w3-xlarge">
-    Sinestesia Teatro Negro
-  </div>
-  <div class="w3-display-bottomleft w3-padding-large">
-    Contacto: mariajose@sinestesiateatro.es
-     <a href="https://raw.githubusercontent.com/dgmx/sinestesiateatro/main/poster/pez-2024.pdf">Decargar Poster</a>
-    <p> <a href="last.html">Anteriores Actuaciones</a></p>
-  </div>
-</div>
- 
+    <section class="hero">
+        <h1>Sinestesia Teatro Negro</h1>
+        <p>Creamos mundos de sombra y luz donde las marionetas cobran vida, 
+           transportando al público a universos fantásticos llenos de magia y emoción.</p>
+        <a href="#presentacion" class="btn">Descubre nuestra magia</a>
+    </section>
 
+    <section id="presentacion" class="section">
+        <h2 class="section-title">Quiénes Somos</h2>
+        <div class="presentacion-content">
+            <div class="presentacion-text">
+                <h3>El Arte del Teatro Negro</h3>
+                <p>El Teatro Negro es una forma artística donde las marionetas y actores se mueven contra un fondo negro, 
+                   creando ilusiones ópticas que desafían la realidad. En Sinestesia, llevamos décadas perfeccionando 
+                   esta técnica milenaria.</p>
+                <p>Nuestras producciones combinan música en vivo, narrativa emotiva y puppetry innovador para crear 
+                   experiencias que hablan directamente al corazón. Cada espectáculo es un viaje único donde la oscuridad 
+                   se transforma en escenario de sueños.</p>
+                <p>Desde el clásico <em>El Gruffalo</em> hasta <em>Belinda</em>, nuestras obras han emocionado a 
+                   generaciones de espectadores en teatros de toda España.</p>
+            </div>
+            <div class="presentacion-image">
+                <img src="img/gruffalo.png" alt="Teatro de sombras">
+            </div>
+        </div>
+    </section>
+
+    <section id="calendario" class="section">
+        <h2 class="section-title">Próximas Actuaciones</h2>
+        <div class="calendario-grid">
+            <div class="evento-card">
+                <div class="evento-fecha">Próximamente</div>
+                <h3 class="evento-titulo">Nuevas Funciones 2026</h3>
+                <p class="evento-lugar">
+                    <i class="fas fa-map-marker-alt"></i>
+                    España
+                </p>
+            </div>
+            <div class="evento-card">
+                <div class="evento-fecha">Consultar</div>
+                <h3 class="evento-titulo">Festivales de Teatro</h3>
+                <p class="evento-lugar">
+                    <i class="fas fa-map-marker-alt"></i>
+                    Varias Ciudades
+                </p>
+            </div>
+            <div class="evento-card">
+                <div class="evento-fecha">Bajo Demanda</div>
+                <h3 class="evento-titulo">Funciones Privadas</h3>
+                <p class="evento-lugar">
+                    <i class="fas fa-map-marker-alt"></i>
+                    Tu Espacio
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section id="eventos" class="section">
+        <h2 class="section-title">Espectáculos Anteriores</h2>
+        <div class="carousel-container">
+            <div class="carousel" id="carousel">
+                <div class="carousel-slide">
+                    <img src="img/gruffalo.png" alt="El Gruffalo">
+                    <div class="carousel-caption">
+                        <h3>El Gruffalo</h3>
+                        <p>Una historia sobre valentía e ingenio</p>
+                    </div>
+                </div>
+                <div class="carousel-slide">
+                    <img src="img/belinda.jpg" alt="Belinda">
+                    <div class="carousel-caption">
+                        <h3>Belinda</h3>
+                        <p>Magia y fantasía para toda la familia</p>
+                    </div>
+                </div>
+                <div class="carousel-slide">
+                    <img src="img/PEZARCO_24.png" alt="Pez Arcoíris">
+                    <div class="carousel-caption">
+                        <h3>Pez Arcoíris</h3>
+                        <p>Un viaje de colores y emociones</p>
+                    </div>
+                </div>
+            </div>
+            <button class="carousel-btn prev" onclick="moveCarousel(-1)">
+                <i class="fas fa-chevron-left"></i>
+            </button>
+            <button class="carousel-btn next" onclick="moveCarousel(1)">
+                <i class="fas fa-chevron-right"></i>
+            </button>
+            <div class="carousel-dots" id="carouselDots"></div>
+        </div>
+    </section>
+
+    <section id="contacto" class="section">
+        <h2 class="section-title">Contacto</h2>
+        <div class="contacto-container">
+            <div class="contacto-info">
+                <h3>¿Quieres contratarnos?</h3>
+                <div class="contacto-item">
+                    <i class="fas fa-envelope"></i>
+                    <a href="mailto:mariajose@sinestesiateatro.es">mariajose@sinestesiateatro.es</a>
+                </div>
+                <div class="contacto-item">
+                    <i class="fas fa-phone"></i>
+                    <span>Consultar disponibilidad</span>
+                </div>
+                <div class="contacto-item">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <span>España</span>
+                </div>
+                <div class="redes-sociales">
+                    <a href="#" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" title="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" title="YouTube"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+            <div class="contacto-form">
+                <h3>Envíanos un mensaje</h3>
+                <form action="mailto:mariajose@sinestesiateatro.es" method="POST">
+                    <div class="form-group">
+                        <label for="nombre">Nombre</label>
+                        <input type="text" id="nombre" name="nombre" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="mensaje">Mensaje</label>
+                        <textarea id="mensaje" name="mensaje" required></textarea>
+                    </div>
+                    <button type="submit" class="btn">Enviar</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 Sinestesia Teatro Negro. Todos los derechos reservados.</p>
+    </footer>
+
+    <script src="js/main.js"></script>
 </body>
 </html>
-
