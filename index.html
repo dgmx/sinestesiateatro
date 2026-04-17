@@ -57,6 +57,26 @@
             font-weight: 700;
         }
         
+        .logo-link {
+            color: var(--gold);
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: color 0.3s;
+        }
+        
+        .logo-link:hover {
+            color: #e0b830;
+        }
+        
+        .logo-link i {
+            font-size: 1.3rem;
+        }
+        
         .nav-links {
             display: flex;
             gap: 2rem;
@@ -476,7 +496,10 @@
 </head>
 <body>
     <nav class="navbar">
-        <div class="logo">Sinestesia Teatro Negro</div>
+        <a href="index.html" class="logo-link">
+            <i class="fas fa-theater-masks"></i>
+            Sinestesia Teatro Negro
+        </a>
         <button class="menu-toggle" onclick="toggleMenu()">
             <i class="fas fa-bars"></i>
         </button>
